@@ -3,8 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const csv = require("csv-parser");
 
-const width = 900; // canvas width
-const height = 600; // canvas height
+const width = 900; 
+const height = 600; 
 const outputDir = path.join(__dirname, "../Images");
 const csvFolder = path.join(__dirname, "../output");
 
@@ -31,24 +31,28 @@ async function generateChart(configuration, fileName) {
   console.log(`✅ Saved chart: ${fileName}`);
 }
 
-// Difficulty distribution chart
+// Difficulty distribution chart as Pie (shades of blue)
 async function difficultyDistribution(recipes) {
   const counts = { easy: 0, medium: 0, hard: 0 };
   recipes.forEach((r) => counts[r.difficulty]++);
   const config = {
-    type: "bar",
+    type: "pie",
     data: {
       labels: Object.keys(counts),
-      datasets: [{ label: "Number of Recipes", data: Object.values(counts), backgroundColor: "#36A2EB" }]
+      datasets: [{
+        label: "Number of Recipes",
+        data: Object.values(counts),
+        backgroundColor: [
+          "rgba(54, 162, 235, 0.8)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(54, 162, 235, 0.3)"
+        ]
+      }]
     },
     options: {
       plugins: {
         title: { display: true, text: "Difficulty Distribution", font: { size: 20 } },
-        legend: { display: false }
-      },
-      scales: {
-        y: { beginAtZero: true, title: { display: true, text: "Number of Recipes" } },
-        x: { title: { display: true, text: "Difficulty" } }
+        legend: { position: "top" }
       }
     }
   };
@@ -73,8 +77,8 @@ async function prepTimeVsLikes(recipes, interactions) {
       datasets: [{
         label: "Likes vs Prep Time",
         data: prepTimes.map((t, i) => ({ x: t, y: likes[i] })),
-        borderColor: "#36A2EB",
-        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "#1E90FF",
+        backgroundColor: "rgba(30, 144, 255, 0.2)",
         fill: false,
         tension: 0.3,
         pointRadius: 5
@@ -95,7 +99,7 @@ async function prepTimeVsLikes(recipes, interactions) {
   await generateChart(config, "prep_vs_likes.png");
 }
 
-// Most common ingredients (light purple)
+// Most common ingredients (bar chart, shades of blue)
 async function mostCommonIngredients(ingredients) {
   const freq = {};
   ingredients.forEach((i) => { const name = i.name.toLowerCase(); freq[name] = (freq[name] || 0) + 1; });
@@ -105,7 +109,25 @@ async function mostCommonIngredients(ingredients) {
 
   const config = {
     type: "bar",
-    data: { labels, datasets: [{ label: "Frequency", data, backgroundColor: "rgba(153, 102, 255, 0.8)" }] },
+    data: { 
+      labels, 
+      datasets: [{
+        label: "Frequency",
+        data,
+        backgroundColor: [
+          "rgba(54, 162, 235, 0.8)",
+          "rgba(54, 162, 235, 0.6)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(54, 162, 235, 0.7)",
+          "rgba(54, 162, 235, 0.4)",
+          "rgba(54, 162, 235, 0.3)",
+          "rgba(54, 162, 235, 0.9)",
+          "rgba(54, 162, 235, 0.65)",
+          "rgba(54, 162, 235, 0.55)",
+          "rgba(54, 162, 235, 0.45)"
+        ]
+      }]
+    },
     options: {
       plugins: { title: { display: true, text: "Most Common Ingredients", font: { size: 20 } }, legend: { display: false } },
       scales: {
@@ -117,12 +139,14 @@ async function mostCommonIngredients(ingredients) {
   await generateChart(config, "most_common_ingredients.png");
 }
 
-// High engagement ingredients (light purple)
+// High engagement ingredients (line chart, blue shades)
+// High engagement ingredients (horizontal bar chart, blue shades)
 async function highEngagementIngredients(ingredients, interactions) {
-  // Map recipeId → total interactions (like + attempt)
+  // Map recipeId → total engagement (like + attempt)
   const recipeEngagement = {};
   interactions.forEach(i => {
-    if (["like", "attempt"].includes(i.type)) recipeEngagement[i.recipeId] = (recipeEngagement[i.recipeId] || 0) + 1;
+    if (["like", "attempt"].includes(i.type)) 
+      recipeEngagement[i.recipeId] = (recipeEngagement[i.recipeId] || 0) + 1;
   });
 
   // Map ingredient → sum of engagement from all recipes containing it
@@ -133,32 +157,61 @@ async function highEngagementIngredients(ingredients, interactions) {
     ingredientEngagement[name] = (ingredientEngagement[name] || 0) + engagement;
   });
 
-  const sorted = Object.entries(ingredientEngagement).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  const sorted = Object.entries(ingredientEngagement)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+
   const labels = sorted.map(([name]) => name);
   const data = sorted.map(([_, count]) => count);
 
+  const backgroundColors = [
+    "rgba(54, 162, 235, 0.9)",
+    "rgba(54, 162, 235, 0.8)",
+    "rgba(54, 162, 235, 0.7)",
+    "rgba(54, 162, 235, 0.6)",
+    "rgba(54, 162, 235, 0.5)",
+    "rgba(54, 162, 235, 0.4)",
+    "rgba(54, 162, 235, 0.3)",
+    "rgba(54, 162, 235, 0.2)",
+    "rgba(54, 162, 235, 0.15)",
+    "rgba(54, 162, 235, 0.1)"
+  ];
+
   const config = {
     type: "bar",
-    data: { labels, datasets: [{ label: "Engagement Score", data, backgroundColor: "rgba(153, 102, 255, 0.8)" }] },
+    data: {
+      labels,
+      datasets: [{
+        label: "Engagement Score",
+        data,
+        backgroundColor: backgroundColors
+      }]
+    },
     options: {
-      plugins: { title: { display: true, text: "High Engagement Ingredients", font: { size: 20 } }, legend: { display: false } },
+      indexAxis: 'y', // Horizontal bar chart
+      plugins: {
+        title: { display: true, text: "High Engagement Ingredients", font: { size: 20 } },
+        legend: { display: false }
+      },
       scales: {
-        y: { beginAtZero: true, title: { display: true, text: "Engagement Score" } },
-        x: { title: { display: true, text: "Ingredients" } }
+        x: { beginAtZero: true, title: { display: true, text: "Engagement Score" } },
+        y: { title: { display: true, text: "Ingredients" } }
       }
     }
   };
+
   await generateChart(config, "high_engagement_ingredients.png");
 }
 
-// Average preparation time per recipe (bar)
+
+// Average preparation time (bar chart, blue)
 async function averagePrepTime(recipes) {
   const labels = recipes.map(r => r.title);
   const prepTimes = recipes.map(r => Number(r.prepTimeMin));
 
   const config = {
     type: "bar",
-    data: { labels, datasets: [{ label: "Prep Time (min)", data: prepTimes, backgroundColor: "#36A2EB" }] },
+    data: { labels, datasets: [{ label: "Prep Time (min)", data: prepTimes, backgroundColor: "#1E90FF" }] },
     options: {
       plugins: { title: { display: true, text: "Average Preparation Time per Recipe", font: { size: 20 } }, legend: { display: false } },
       scales: {
@@ -170,15 +223,10 @@ async function averagePrepTime(recipes) {
   await generateChart(config, "average_prep_time.png");
 }
 
-// Most frequently viewed recipes
+// Most frequently viewed recipes (bar chart, blue)
 async function mostViewedRecipes(recipes, interactions) {
   const viewCounts = {};
-  interactions.forEach(i => {
-    if (i.type === "view") {
-      const rid = i.recipe_id || i.recipeId; // handle actual column name
-      viewCounts[rid] = (viewCounts[rid] || 0) + 1;
-    }
-  });
+  interactions.forEach(i => { if (i.type === "view") { const rid = i.recipe_id || i.recipeId; viewCounts[rid] = (viewCounts[rid] || 0) + 1; } });
 
   const labels = [];
   const counts = [];
@@ -192,7 +240,7 @@ async function mostViewedRecipes(recipes, interactions) {
 
   const config = {
     type: "bar",
-    data: { labels, datasets: [{ label: "Views", data: counts, backgroundColor: "#36A2EB" }] },
+    data: { labels, datasets: [{ label: "Views", data: counts, backgroundColor: "#1E90FF" }] },
     options: {
       plugins: { title: { display: true, text: "Most Frequently Viewed Recipes", font: { size: 20 } }, legend: { display: false } },
       scales: {

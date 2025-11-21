@@ -73,13 +73,23 @@ The analytics scripts provide detailed insights into recipe data, user interacti
 
 Your analytics script provides:
 
-- Most Frequently Viewed Recipes
-Highlights recipes with the highest number of views from user interactions.
-Insight: Shows popular recipes that attract user attention.
+## Most Frequently Viewed Recipes
 
-- Most liked recipe
+- Highlights recipes with the highest number of views from user interactions.
+- Insight: Shows popular recipes that attract user attention.
+![most_viewed_recipes](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/most_viewed_recipes.png)
 
-- Most active user
+## Most Common Ingredients
+
+- Shows the top 10 most frequently used ingredients across all recipes.
+- Insight: Helps understand popular ingredients in the dataset.
+![most_common_ingredients](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/most_common_ingredients.png)
+
+## Average Preparation Time
+
+- Displays the average preparation time for all recipes.
+- Insight: Useful for understanding recipe complexity and planning.
+![avg_prep_time](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/average_prep_time.png)
 
 - Average global rating
 
