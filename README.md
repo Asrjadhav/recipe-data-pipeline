@@ -87,22 +87,24 @@ Your analytics script provides:
 
 ## Average Preparation Time
 
-- Displays the average preparation time for all recipes.
+- It displays the average preparation time for all recipes.
 - Insight: Useful for understanding recipe complexity and planning.
 ![avg_prep_time](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/average_prep_time.png)
 
-- Average global rating
+## Difficulty Distribution
 
+- Distribution of recipes across difficulty levels (easy, medium, hard).
+- Insight: Visualizes recipe difficulty spread for users.
 - Distribution of difficulty levels
+![Difficulty_distribution](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/difficulty_chart.png)
 
-- Engagement frequency patterns
+## Ingredients Associated With High Engagement
 
-- Example (replace with your real results):
+- It identifies ingredients commonly found in recipes with high user engagement.
+- Insight: Indicates which ingredients contribute to popular recipes.
+![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/high_engagement_ingredients.png)
 
- - Aditi’s Uttapam → Highest engagement
-
- - Synthetic Recipe 5 → Highest rating (4.8)
-
- - John → Most active user
-
- - 53% recipes are easy
+## Correlation Between Prep Time and Likes
+- It Shows whether recipes with higher prep time receive more or fewer likes.
+- Insight: Identifies if longer or shorter recipes tend to be more liked.
+![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/prep_vs_likes.png)
