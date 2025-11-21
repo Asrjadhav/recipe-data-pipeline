@@ -3,7 +3,7 @@
 A complete end-to-end data engineering pipeline built using Firebase, Node.js ETL scripts, and analytics processing.
 The project extracts raw Firestore data, cleans and normalizes it, validates quality rules, and generates CSV outputs for analysis.
 
-1. This project demonstrates a recipe data pipeline:
+- This project demonstrates a recipe data pipeline:
 
 1) Extracts data from Firebase(users, recipes, interactions)
 
@@ -20,7 +20,7 @@ Primary dataset includes Aditi’s Uttapam recipe and synthetic recipes for test
 
 ## 2. Data Model (Firestore Schema)
 
-![Data Model](images/flow.png)
+![Data Model](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/Images/flow.png?raw=true)
 
 ## 3. Running the Pipeline:
 Prerequisites:
