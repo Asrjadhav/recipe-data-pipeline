@@ -117,14 +117,14 @@ The analytics scripts provide detailed insights into recipe data, user interacti
 ## 5. Known Constraints or Limitations
 
 
-1) Dataset Size: Current pipeline works with a small dataset (Aditi’s Uttapam recipe + synthetic recipes). May need optimization for large-scale datasets.
+- Dataset Size: Current pipeline works with a small dataset (Aditi’s Uttapam recipe + synthetic recipes). May need optimization for large-scale datasets.
 
-2) User Interaction Data: Only basic interactions (like, view, attempt) are tracked; more detailed engagement metrics (time spent, favorites, comments) are not captured.
+- User Interaction Data: Only basic interactions (like, view, attempt) are tracked; more detailed engagement metrics (time spent, favorites, comments) are not captured.
 
-3) Static Visualizations: Charts are generated from CSV files, not dynamic dashboards; no real-time updates.
+- Static Visualizations: Charts are generated from CSV files, not dynamic dashboards; no real-time updates.
 
-4) Ingredient Analysis: High engagement ingredients assume linear aggregation of recipe interactions; no weighting for user influence or recipe popularity trends.
+- Ingredient Analysis: High engagement ingredients assume linear aggregation of recipe interactions; no weighting for user influence or recipe popularity trends.
 
-5) Scalability: Pipeline is designed for educational/demo purposes and may need refactoring for production-level deployment.
+- Scalability: Pipeline is designed for educational/demo purposes and may need refactoring for production-level deployment.
 
-6) Analytics Scope: Limited to predefined insights; no predictive modeling or recommendations implemented yet.
+- Analytics Scope: Limited to predefined insights; no predictive modeling or recommendations implemented yet.
