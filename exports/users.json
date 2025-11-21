@@ -1,0 +1,32 @@
+[
+  {
+    "id": "8FwFxBonqLfmPr2815Uo",
+    "name": "Aditi",
+    "email": "aditi@example.com",
+    "joinedAt": {
+      "_seconds": 1763626349,
+      "_nanoseconds": 54000000
+    },
+    "profilePic": ""
+  },
+  {
+    "id": "F3k8DnnDuH0TiQ60oER9",
+    "name": "Sara",
+    "email": "sara@example.com",
+    "joinedAt": {
+      "_seconds": 1763626349,
+      "_nanoseconds": 646000000
+    },
+    "profilePic": ""
+  },
+  {
+    "id": "hBGXZSMVqCVleKNrsy4w",
+    "name": "John",
+    "email": "john@example.com",
+    "joinedAt": {
+      "_seconds": 1763626349,
+      "_nanoseconds": 631000000
+    },
+    "profilePic": ""
+  }
+]

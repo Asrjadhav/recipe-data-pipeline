@@ -1,0 +1,32 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+firebase-debug.*.log*
+
+# Firebase cache
+.firebase/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage
+.nyc_output
+
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# Ignore Firebase service account key (very important)
+scripts/serviceAccountKey.json
+
+# Keep other JSON files (so DO NOT use *.json here)
