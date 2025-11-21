@@ -1,0 +1,124 @@
+Insight Summary – Recipe Data Pipeline
+
+1. Most Common Ingredients
+
+The following ingredients appear most frequently across all recipes:
+
+Ingredient_3
+
+Ingredient_14
+
+Rava (Suji)
+
+Curd
+
+Salt
+
+(Each listed ingredient occurs once in the dataset.)
+
+2. Average Preparation Time
+
+The average preparation time across all recipes is 17.8 minutes.
+
+3. Difficulty Distribution
+
+Number of recipes by difficulty level:
+
+Easy: 6
+
+Medium: 5
+
+Hard: 5
+
+(Visualize this using the “Difficulty Distribution” chart for clarity.)
+
+4. Correlation Between Preparation Time & Likes
+
+The correlation is not available (NaN) in the current dataset.
+
+Note: Additional interaction data may help calculate meaningful correlations.
+
+5. Top Viewed Recipes
+
+Recipes with the highest number of views:
+
+Recipe	Views
+Uttapam (Aditi’s Recipe)	3
+Synthetic Recipe 1	1
+Synthetic Recipe 5	1
+Synthetic Recipe 8	1
+Synthetic Recipe 9	1
+
+(Visualize with the “Most Frequently Viewed Recipes” chart.)
+
+6. Ingredients Associated With High Engagement
+
+Ingredients contributing to the highest engagement (likes + attempts):
+
+Uttapam (Aditi’s Recipe): Rava (Suji), Curd, Salt, Soda, Oil, Onions, Tomatoes, Green Chillies, Coriander, Water
+
+Synthetic Recipe 10: Ingredient_10
+
+Synthetic Recipe 8: Ingredient_8
+
+Synthetic Recipe 13: Ingredient_13
+
+Synthetic Recipe 9: Ingredient_9
+
+(Visualize with the “High Engagement Ingredients” chart.)
+
+Note: All insights are based on the current dataset. Charts and visualizations are stored in the Images folder for reference.
+
+
+
+(analytics.py) 
+OUTPUT:
+
+🔍 Running Analytics...
+
+- Most Common Ingredients:
+name
+Ingredient_3     1
+Ingredient_14    1
+Rava (Suji)      1
+Curd             1
+Salt             1
+Name: count, dtype: int64
+
+- Average Preparation Time: 17.8125 minutes
+
+📊 Difficulty Distribution:
+difficulty
+easy      6
+hard      5
+medium    5
+Name: count, dtype: int64
+
+📈 Correlation between Prep Time & Likes: nan 
+
+Top Viewed Recipes:
+recipeId
+n956qv0aC3Cmru6hd9g8    3
+0zA9K0fJT13Op9l3GMFc    1
+5d9JYok4SPP6tWLX3FlJ    1
+1M4O0FJpGDhHFALbUHSX    1
+ByoI3NCe8PhwFpDhBDsa    1
+dtype: int64
+
+- Ingredients Associated With High Engagement:
+Recipe: Uttapam (Aditi's Recipe)
+Ingredients: Rava (Suji), Curd, Salt, Soda, Oil, Onions, Tomatoes, Green Chillies, Coriander, Water
+
+Recipe: Synthetic Recipe 10
+Ingredients: Ingredient_10
+
+Recipe: Synthetic Recipe 8
+Ingredients: Ingredient_8
+
+Recipe: Synthetic Recipe 13
+Ingredients: Ingredient_13
+
+Recipe: Synthetic Recipe 9
+Ingredients: Ingredient_9
+
+Analytics Done!
