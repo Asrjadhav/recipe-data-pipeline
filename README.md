@@ -44,7 +44,9 @@ Extract:
 Transform:
 - Normalize nested fields (ingredients, steps)
 
-- Convert timestamps → ISO strings
+- Flatten Firestore structure
+
+- Convert timestamps to ISO format
 
 - Standardize difficulty values
 
@@ -59,11 +61,21 @@ Load:
 
 - Save analytics summary as Markdown
 
+- Optional visualizations
+
+CSV files generated:
+- users.csv → contains all user information
+- recipes.csv → contains all recipes with normalized ingredients and steps
+- interactions.csv → contains all interactions with clean ratings and types
+
 ## 5. Insights Summary
+The analytics scripts provide detailed insights into recipe data, user interactions, and engagement patterns. Below are the key insights with visualizations:
 
 Your analytics script provides:
 
-- Most attempted recipe
+- Most Frequently Viewed Recipes
+Highlights recipes with the highest number of views from user interactions.
+Insight: Shows popular recipes that attract user attention.
 
 - Most liked recipe
 
