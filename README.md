@@ -78,38 +78,38 @@ CSV files generated:
 ## 4. Insights Summary
 The analytics scripts provide detailed insights into recipe data, user interactions, and engagement patterns. Below are the key insights with visualizations:
 
-#### 1. Most Frequently Viewed Recipes
+### 1. Most Frequently Viewed Recipes
 
 - Highlights recipes with the highest number of views from user interactions.
 - Insight: Shows popular recipes that attract user attention.
 ![most_viewed_recipes](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/most_viewed_recipes.png)
 
-#### 2. Most Common Ingredients
+### 2. Most Common Ingredients
 
 - Shows the top 10 most frequently used ingredients across all recipes.
 - Insight: Helps understand popular ingredients in the dataset.
 ![most_common_ingredients](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/most_common_ingredients.png)
 
-#### 3. Average Preparation Time
+### 3. Average Preparation Time
 
 - It displays the average preparation time for all recipes.
 - Insight: Useful for understanding recipe complexity and planning.
 ![avg_prep_time](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/average_prep_time.png)
 
-#### 4. Difficulty Distribution
+### 4. Difficulty Distribution
 
 - Distribution of recipes across difficulty levels (easy, medium, hard).
 - Insight: Visualizes recipe difficulty spread for users.
 - Distribution of difficulty levels
 ![Difficulty_distribution](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/difficulty_chart.png)
 
-#### 5. Ingredients Associated With High Engagement
+### 5. Ingredients Associated With High Engagement
 
 - It identifies ingredients commonly found in recipes with high user engagement.
 - Insight: Indicates which ingredients contribute to popular recipes.
 ![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/high_engagement_ingredients.png)
 
-#### 6. Correlation Between Prep Time and Likes
+### 6. Correlation Between Prep Time and Likes
 - It Shows whether recipes with higher prep time receive more or fewer likes.
 - Insight: Identifies if longer or shorter recipes tend to be more liked.
 ![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/prep_vs_likes.png)
