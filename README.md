@@ -20,7 +20,7 @@ Primary dataset includes Aditi’s Uttapam recipe and synthetic recipes for test
 
 ## 2. Data Model (Firestore Schema)
 
-![Data Model](images/download_1.png)
+![Data Model](images/flow.png)
 
 ## 3. Running the Pipeline:
 Prerequisites:
