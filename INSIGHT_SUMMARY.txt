@@ -4,15 +4,15 @@ Insight Summary – Recipe Data Pipeline
 
 The following ingredients appear most frequently across all recipes:
 
-Ingredient_3
+- Ingredient_3
 
-Ingredient_14
+- Ingredient_14
 
-Rava (Suji)
+- Rava (Suji)
 
-Curd
+- Curd
 
-Salt
+- Salt
 
 (Each listed ingredient occurs once in the dataset.)
 
@@ -24,11 +24,11 @@ The average preparation time across all recipes is 17.8 minutes.
 
 Number of recipes by difficulty level:
 
-Easy: 6
+- Easy: 6
 
-Medium: 5
+- Medium: 5
 
-Hard: 5
+- Hard: 5
 
 (Visualize this using the “Difficulty Distribution” chart for clarity.)
 
@@ -87,14 +87,14 @@ Name: count, dtype: int64
 
 - Average Preparation Time: 17.8125 minutes
 
-📊 Difficulty Distribution:
+Difficulty Distribution:
 difficulty
 easy      6
 hard      5
 medium    5
 Name: count, dtype: int64
 
-📈 Correlation between Prep Time & Likes: nan 
+Correlation between Prep Time & Likes: nan 
 
 Top Viewed Recipes:
 recipeId
@@ -121,7 +121,7 @@ Ingredients: Ingredient_13
 Recipe: Synthetic Recipe 9
 Ingredients: Ingredient_9
 
-🔥 Highest Engagement Score (Top 5 Recipes):
+Highest Engagement Score (Top 5 Recipes):
                   title  engagementScore
 7   Synthetic Recipe 13              5.0
 14   Synthetic Recipe 6              5.0
@@ -130,10 +130,10 @@ Ingredients: Ingredient_9
 6    Synthetic Recipe 8              3.0
 13   Synthetic Recipe 4              2.0
 
-🧂 Average Number of Ingredients per Recipe: 1.56
-🧂 Average Number of Ingredients per Recipe: 1.56
+Average Number of Ingredients per Recipe: 1.56
+Average Number of Ingredients per Recipe: 1.56
 
-👤 Most Active Users (Top 5):
+Most Active Users (Top 5):
 userId
 F3k8DnnDuH0TiQ60oER9    13
 8FwFxBonqLfmPr2815Uo    11
@@ -141,12 +141,12 @@ hBGXZSMVqCVleKNrsy4w     6
 dtype: int64
 dtype: int64
 
-🪜 Average Number of Steps per Recipe: 2.0
+Average Number of Steps per Recipe: 2.0
 
-⏳ Longest Preparation Time:
+Longest Preparation Time:
 Synthetic Recipe 15 – 25.0 minutes
 
-⚡ Shortest Preparation Time:
+Shortest Preparation Time:
 Synthetic Recipe 1 – 11.0 minutes
 
 
