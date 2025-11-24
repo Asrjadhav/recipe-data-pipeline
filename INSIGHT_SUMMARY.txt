@@ -121,4 +121,32 @@ Ingredients: Ingredient_13
 Recipe: Synthetic Recipe 9
 Ingredients: Ingredient_9
 
-Analytics Done!
+🔥 Highest Engagement Score (Top 5 Recipes):
+                  title  engagementScore
+7   Synthetic Recipe 13              5.0
+14   Synthetic Recipe 6              5.0
+4   Synthetic Recipe 12              3.0
+4   Synthetic Recipe 12              3.0
+6    Synthetic Recipe 8              3.0
+13   Synthetic Recipe 4              2.0
+
+🧂 Average Number of Ingredients per Recipe: 1.56
+🧂 Average Number of Ingredients per Recipe: 1.56
+
+👤 Most Active Users (Top 5):
+userId
+F3k8DnnDuH0TiQ60oER9    13
+8FwFxBonqLfmPr2815Uo    11
+hBGXZSMVqCVleKNrsy4w     6
+dtype: int64
+dtype: int64
+
+🪜 Average Number of Steps per Recipe: 2.0
+
+⏳ Longest Preparation Time:
+Synthetic Recipe 15 – 25.0 minutes
+
+⚡ Shortest Preparation Time:
+Synthetic Recipe 1 – 11.0 minutes
+
+
