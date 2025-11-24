@@ -121,12 +121,16 @@ The analytics scripts provide detailed insights into recipe data, user interacti
 - Insight: Useful to understand the most successful or trending recipes.
 ![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/highest_engagement_score.png)
 
-### 9. Longest vs Shortest Preparation Time
+### 8. Longest vs Shortest Preparation Time
 
 - Highlights the recipes with the maximum and minimum preparation time.
 - Insight: Helps users compare extremes in recipe durations.
 ![Long_Short](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/prep_time_range.png)
 
+### 9. Average Number of Steps per Recipe
+- Shows the average number of steps required across all recipes.
+- Insight: Gives a sense of overall recipe complexity.
+![Avg_steps](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/avg_steps.png)
 
 ### . 10. Correlation Between Prep Time and Likes
 - It Shows whether recipes with higher prep time receive more or fewer likes.
