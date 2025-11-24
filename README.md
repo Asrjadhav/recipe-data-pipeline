@@ -59,9 +59,9 @@ Transform:
 - Standardize difficulty values
 
 - Add derived metrics:
- - totalTime = prepTimeMin + cookTimeMin
- - ingredientCount
- - stepCount
+  - totalTime = prepTimeMin + cookTimeMin
+  - ingredientCount
+  - stepCount
 
 Load:
 
