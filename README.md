@@ -18,11 +18,46 @@ The project extracts raw Firestore data, cleans and normalizes it, validates qua
 Primary dataset includes Aditi’s Uttapam recipe and synthetic recipes for testing.
 
 
-## 1. Data Model (Firestore Schema)
+## 1. Firestore Schema
+
+### 1. Users Collection
+| Field       | Type      | Description                  |
+|------------|-----------|-----------------------------|
+| name       | String    | User's name                  |
+| email      | String    | User's email                 |
+| joinedAt   | Timestamp | Date when user joined        |
+| profilePic | String    | URL of profile picture       |
+
+### 2. Recipes Collection
+| Field        | Type     | Description                                               |
+|-------------|----------|-----------------------------------------------------------|
+| title       | String   | Recipe name                                               |
+| authorId    | String   | Reference to Users collection                             |
+| description | String   | Short description of the recipe                           |
+| prepTimeMin | Number   | Preparation time in minutes                                |
+| cookTimeMin | Number   | Cooking time in minutes                                    |
+| difficulty  | String   | “easy", "medium", "hard"                                   |
+| servings    | Number   | Number of servings                                        |
+| ingredients | Array    | List of objects: `{ name, quantity, unit }`             |
+| steps       | Array    | List of objects: `{ stepNo, text }`                      |
+| tags        | Array    | Recipe tags (e.g., "breakfast")                           |
+| createdAt   | Timestamp| Creation date                                             |
+
+### 3. Interactions Collection
+| Field             | Type      | Description                                               |
+|------------------|-----------|-----------------------------------------------------------|
+| recipeId          | String    | Reference to Recipes collection                           |
+| userId            | String    | Reference to Users collection                              |
+| type              | String    | Interaction type: "view", "like", "attempt", "rating"    |
+| rating            | Number    | Optional; only for type "rating" (1–5)                   |
+| difficultyReported| String    | Optional; "easy", "medium", "hard"                       |
+| createdAt         | Timestamp | Date of interaction                                       |
+
+## 2. Data Model (Firestore Schema)
 
 ![Data Model](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/flow.png)
 
-## 2. Running the Pipeline:
+## 3. Running the Pipeline:
 Prerequisites:
 
 - Node.js v18+
@@ -45,7 +80,7 @@ Prerequisites:
 - Step 5 — Validate Data (validator.py)
 - Step 6 — Generate Insights
 
-## 3. ETL Process Overview
+## 4. ETL Process Overview
 Extract: 
 - Pull JSON data from production Firestore using Firebase Admin SDK.
 
@@ -76,7 +111,7 @@ CSV files generated:
 - recipes.csv → contains all recipes with normalized ingredients and steps
 - interactions.csv → contains all interactions with clean ratings and types
 
-## 4. Insights Summary
+## 5. Insights Summary
 The analytics scripts provide detailed insights into recipe data, user interactions, and engagement patterns. Below are the key insights with visualizations:
 
 ### 1. Most Frequently Viewed Recipes
@@ -137,7 +172,7 @@ The analytics scripts provide detailed insights into recipe data, user interacti
 - Insight: Identifies if longer or shorter recipes tend to be more liked.
 ![Prep_like](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/prep_vs_likes.png)
 
-## 5. Known Constraints or Limitations
+## 6. Known Constraints or Limitations
 
 
 - Dataset Size: Current pipeline works with a small dataset (Aditi’s Uttapam recipe + synthetic recipes). May need optimization for large-scale datasets.
