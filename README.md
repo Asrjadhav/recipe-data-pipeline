@@ -107,28 +107,30 @@ The analytics scripts provide detailed insights into recipe data, user interacti
 
 - It identifies ingredients commonly found in recipes with high user engagement.
 - Insight: Indicates which ingredients contribute to popular recipes.
-![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/high_engagement_ingredients.png)
+![Ingredient_engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/high_engagement_ingredients.png)
 
 ### 6. Most Active Users 
 - Highlights users with the highest number of interactions (likes, attempts, views).
 - Insight: Helps identify highly engaged or power users of the system.
+![Active_user](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/most_active_users.png)
 
 ### 7. Highest Engagement Score (Top Recipes)
 
 - Shows recipes with the highest combined engagement score.
 - Insight: Useful to understand the most successful or trending recipes.
+![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/highest_engagement_score.png)
 
 ### 9. Longest vs Shortest Preparation Time
 
 - Highlights the recipes with the maximum and minimum preparation time.
 - Insight: Helps users compare extremes in recipe durations.
-![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/prep_vs_likes.png)
+![Long_Short](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/prep_time_range.png)
 
 
 ### . 10. Correlation Between Prep Time and Likes
 - It Shows whether recipes with higher prep time receive more or fewer likes.
 - Insight: Identifies if longer or shorter recipes tend to be more liked.
-![High_Engagement](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/prep_vs_likes.png)
+![Prep_like](https://github.com/Asrjadhav/recipe-data-pipeline/blob/main/images/prep_vs_likes.png)
 
 ## 5. Known Constraints or Limitations
 
