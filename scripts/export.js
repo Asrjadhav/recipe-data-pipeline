@@ -33,13 +33,13 @@ async function exportCollection(collectionName) {
 }
 
 async function runExport() {
-  console.log("📦 Exporting Firestore Emulator data...");
+  console.log("Exporting Firestore Emulator data...");
 
   await exportCollection("users");
   await exportCollection("recipes");
   await exportCollection("interactions");
 
-  console.log("🎉 Export complete!");
+  console.log("Export complete!");
 }
 
 runExport();

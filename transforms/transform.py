@@ -6,14 +6,14 @@ import os
 if not os.path.exists("output"):
     os.makedirs("output")
 
-print("📦 Loading exported JSON files...")
+print(" Loading exported JSON files...")
 
 # Load JSON exports 
 recipes = json.load(open("exports/recipes.json"))
 users = json.load(open("exports/users.json"))
 interactions = json.load(open("exports/interactions.json"))
 
-print("✔ JSON files loaded")
+print("JSON files loaded")
 
 
 # 1) RECIPE TABLE
@@ -62,7 +62,7 @@ pd.DataFrame(recipe_rows).to_csv("output/recipe.csv", index=False)
 pd.DataFrame(ingredient_rows).to_csv("output/ingredients.csv", index=False)
 pd.DataFrame(step_rows).to_csv("output/steps.csv", index=False)
 
-print("✔ Recipe, Ingredients, Steps CSV created")
+print("Recipe, Ingredients, Steps CSV created")
 
 
 # 2) USERS TABLE
@@ -78,7 +78,7 @@ for u in users:
     })
 
 pd.DataFrame(user_rows).to_csv("output/users.csv", index=False)
-print("✔ Users CSV created")
+print("Users CSV created")
 
 
 # 3) INTERACTIONS TABLE
@@ -96,6 +96,6 @@ for inter in interactions:
     })
 
 pd.DataFrame(interaction_rows).to_csv("output/interactions.csv", index=False)
-print("✔ Interactions CSV created")
+print("Interactions CSV created")
 
-print("\n🎉 Transformation complete! Check the 'output' folder.")
+print("\n Transformation complete! Check the 'output' folder.")

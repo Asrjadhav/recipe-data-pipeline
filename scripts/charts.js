@@ -28,7 +28,7 @@ async function generateChart(configuration, fileName) {
   const chartJSNodeCanvas = new ChartJSNodeCanvas({ width, height });
   const buffer = await chartJSNodeCanvas.renderToBuffer(configuration);
   fs.writeFileSync(path.join(outputDir, fileName), buffer);
-  console.log(`✅ Saved chart: ${fileName}`);
+  console.log(`Saved chart: ${fileName}`);
 }
 
 // 1. Difficulty distribution chart as Pie (shades of blue)
@@ -377,7 +377,6 @@ async function avgSteps(steps) {
 }
 
 // 11. Longest vs Shortest Prep Time
-// 6. Longest vs Shortest Prep Time (FIXED)
 async function prepTimeRanges(recipes) {
   const cleaned = recipes
     .filter(r => r.prepTimeMin && !isNaN(r.prepTimeMin))
@@ -387,7 +386,7 @@ async function prepTimeRanges(recipes) {
     }));
 
   if (cleaned.length < 2) {
-    console.log("⚠ Not enough valid prep-time data to generate chart.");
+    console.log("Not enough valid prep-time data to generate chart.");
     return;
   }
 
@@ -495,9 +494,9 @@ async function run() {
     await avgSteps(steps);
     await prepTimeRanges(recipes);
 
-    console.log("🎉 All charts generated successfully!");
+    console.log("All charts generated successfully!");
   } catch (err) {
-    console.error("❌ Error generating charts:", err);
+    console.error("Error generating charts:", err);
   }
 }
 

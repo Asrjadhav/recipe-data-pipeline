@@ -29,7 +29,7 @@ async function seed() {
     userIds.push(ref.id);
   }
 
-  console.log("✔ Users added");
+  console.log("Users added");
 
   // 2. SEED MAIN RECIPE
   const mainRecipeRef = await db.collection("recipes").add({
@@ -75,7 +75,7 @@ async function seed() {
     createdAt: new Date(),
   });
 
-  console.log("✔ Main recipe added");
+  console.log("Main recipe added");
 
   // 3. SEED SYNTHETIC RECIPES
   const recipeIds = [mainRecipeRef.id];
@@ -98,7 +98,7 @@ async function seed() {
     recipeIds.push(syntheticRef.id);
   }
 
-  console.log("✔ Synthetic recipes added");
+  console.log("Synthetic recipes added");
 
   // 4. FIXED INTERACTIONS
   const interactionTypes = ["view", "like", "attempt", "rating"];
@@ -118,9 +118,9 @@ async function seed() {
     });
   }
 
-  console.log("✔ Interactions added");
+  console.log("Interactions added");
 
-  console.log("🎉 Seeding complete!");
+  console.log("Seeding complete!");
 }
 
-seed().catch((err) => console.error("❌ Error seeding data:", err));
+seed().catch((err) => console.error("Error seeding data:", err));

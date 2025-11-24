@@ -53,8 +53,6 @@ for _, row in top_liked_recipes.iterrows():
     print("Ingredients:", ", ".join(ing["name"].tolist()))
     print()
 
-# NEW INSIGHTS YOU REQUESTED
-
 # 7. Highest Engagement Score (likes + views + attempts)
 engagement = interactions.groupby("recipeId").size().reset_index(name="engagementScore")
 top_engaged = recipes.merge(engagement, on="recipeId", how="left").sort_values("engagementScore", ascending=False)
@@ -86,4 +84,4 @@ print(f"{max_prep['title']} – {max_prep['prepTimeMin']} minutes\n")
 print("Shortest Preparation Time:")
 print(f"{min_prep['title']} – {min_prep['prepTimeMin']} minutes\n")
 
-# -------------------------------------------------------------------
+
