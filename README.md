@@ -27,21 +27,22 @@ Prerequisites:
 
 - Node.js v18+
 - Firebase Admin SDK service account key (serviceAccountKey.json)
-- Firebase project created
+- Firebase project with Firestore
 - Install project dependencies: `npm install`
 - Required Node.js packages installed:
   - `firebase-admin` → To interact with Firebase Firestore
+  - `chartjs-node`-canvas → Generate charts
   - `csv-parser` → To read CSV files
   - `chartjs-node-canvas` → To generate charts programmatically
   - `fs` (File System module) → For reading/writing files
   - `path` → For handling file paths
 
 ## Steps
-- Step 1 — Add Firebase Service Account
-- Step 2 — Seed Firestore Data
-- Step 3 — Export Data from Firestore
-- Step 4 — Transform Data (ETL)
-- Step 5 — Validate Data
+- Step 1 — Add Firebase Service Account(Place serviceAccountKey.json inside /config.)
+- Step 2 — Seed Firestore Data (seed.js)
+- Step 3 — Export Data from Firestore (export.js)
+- Step 4 — Transform Data - ETL (transform.py)
+- Step 5 — Validate Data (validator.py)
 - Step 6 — Generate Insights
 
 ## 3. ETL Process Overview
